@@ -1,0 +1,79 @@
+@import "bourbon";
+
+/* Demo styling */
+
+body {
+    background-color: #eee;
+    box-sizing: border-box;
+    font-family: "Futura PT", "Futura", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Buttons at the center */
+
+.wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -259px;
+    margin-left: -89px;
+    text-align: center;
+}
+
+/* General styling for the links */
+
+a {
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    margin: 20px auto;
+}
+
+.btn3,
+.btn3:link,
+.btn3:visited {
+    color: #333;
+    font-size: .8em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    min-width: 100px;
+    max-width: 60%;
+    position: relative;
+    margin: 0 auto;
+    border: 2px solid transparent;
+    transition: all .2s cubic-bezier(0.455, 0.030, 0.515, 0.955);
+
+    &:after,
+    &:before {
+        content: "";
+        position: absolute;
+        left: - 1em;
+        top: -2px;
+        height: 3.3em;
+        width: 0;
+        border: 1px solid #c75842;
+        transition: inherit;
+    }
+
+    &:after {
+        left: auto;
+        right: -1em;
+    }
+
+    &:hover {
+        border-color: #c75842;
+        transition: border-color .2s .2s cubic-bezier(0.455, 0.030, 0.515, 0.955);
+
+        &:after,
+        &:before {
+            right: -2px;
+            transition: all .2s cubic-bezier(0.455, 0.030, 0.515, 0.955);
+        }
+
+        &:before {
+            left: -2px;
+            right: auto;
+        }
+    }
+}
