@@ -115,6 +115,7 @@ footer {
     background-color: #000;
     color: #fff;
     position: fixed;
+    margin-top: 10px;
     width: 100%;
     bottom: 0;
     z-index: 1000;
