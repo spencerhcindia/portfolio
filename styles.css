@@ -77,8 +77,9 @@ nav ul li a {
 
 .profile-pic {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    size: 20%;
+    width: auto;
+    height: auto;
     margin-bottom: 1rem;
 }
 
