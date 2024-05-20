@@ -22,6 +22,7 @@ header {
 #navbar {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 #nav-toggle {
@@ -62,6 +63,8 @@ nav ul li a {
 
 .hero {
     padding: 5rem 1rem 4rem;
+    margin-top: 60px;
+    /* Adjusting margin to account for the fixed header */
 }
 
 .profile-pic {
@@ -127,6 +130,7 @@ footer {
     width: 100%;
     bottom: 0;
     z-index: 1000;
+    font-size: 0.8rem;
 }
 
 form {
@@ -166,6 +170,7 @@ form button:hover {
 @media (min-width: 768px) {
     #navbar {
         flex-direction: row;
+        align-items: center;
     }
 
     nav ul {
