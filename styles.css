@@ -23,8 +23,8 @@ header {
 #navbar {
     display: flex;
     flex-direction: column;
-    flex-flow: wrap;
-    /* align-items: flex-start; */
+    flex-flow: column;
+    align-items: flex-start;
 }
 
 nav ul {
