@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spencer's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <nav>
+        <nav id="navbar">
+            <button id="nav-toggle">&#9776;</button>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -22,16 +23,17 @@
     </header>
     <main id="home">
         <section class="hero">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
             <h1>Spencer's Portfolio</h1>
-            <p>Software Engineer, Audio Engineer, and Creator.</p>
+            <p>Audio Engineer, Music Producer, and Software Engineer</p>
             <a href="#projects" class="btn">View My Work</a>
+            <a href="resume.pdf" class="btn" download>Download Resume</a>
         </section>
     </main>
     <section id="about" class="content-section">
         <h2>About Me</h2>
-        <p>I'm Spencer, an experienced software engineer, audio engineer producer, and technologically fluent creative
-            based in Northeast Ohio. With a passion for creating impactful audio experiences and innovative software
-            solutions, I bring a unique blend
+        <p>I'm Spencer, an experienced audio engineer, music producer, and software engineer based in Canton, Ohio. With
+            a passion for creating impactful audio experiences and innovative software solutions, I bring a unique blend
             of creativity and technical expertise to every project I undertake.</p>
     </section>
     <section id="projects" class="content-section">
@@ -39,6 +41,14 @@
         <div class="project">
             <h3>Project 1</h3>
             <p>Description of project 1.</p>
+        </div>
+        <div class="project">
+            <h3>Project 2</h3>
+            <p>Description of project 2.</p>
+        </div>
+        <div class="project">
+            <h3>Project 3</h3>
+            <p>Description of project 3.</p>
         </div>
     </section>
     <section id="contact" class="content-section">
@@ -54,7 +64,7 @@
         </form>
     </section>
     <footer>
-        <p>&copy; 2024 Spencer Cindia. All rights reserved.</p>
+        <p>&copy; 2024 Spencer Cindis. All rights reserved.</p>
     </footer>
     <script src="scripts.js"></script>
 </body>

@@ -2,70 +2,99 @@
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #fff;
+    color: #000;
     text-align: center;
 }
 
 header {
-    background-color: #333;
+    background-color: #000;
     color: #fff;
-    padding: 1rem 0;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    z-index: 1000;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: column;
+}
+
+#nav-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
 }
 
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
+    display: none;
+    flex-direction: column;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: normal;
+    padding: 0.5rem 1rem;
+    display: block;
 }
 
 .hero {
-    padding: 4rem 1rem;
+    padding: 5rem 1rem 4rem;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
 .hero p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
 }
 
 .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: #333;
+    background-color: #000;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    margin: 0.5rem;
     transition: background-color 0.3s;
 }
 
 .btn:hover {
-    background-color: #555;
+    background-color: #333;
 }
 
 .content-section {
     padding: 4rem 1rem;
-    text-align: center;
 }
 
 .content-section h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -76,22 +105,19 @@ nav ul li a {
 }
 
 .project h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
-}
-
-.project p {
-    font-size: 1rem;
 }
 
 footer {
     text-align: center;
-    padding: .5rem 0;
-    background-color: rgb(208, 208, 208);
+    padding: 1rem 0;
+    background-color: #000;
     color: #fff;
     position: fixed;
     width: 100%;
     bottom: 0;
+    z-index: 1000;
 }
 
 form {
@@ -117,7 +143,7 @@ form textarea {
 form button {
     width: 100%;
     padding: 0.5rem;
-    background-color: #333;
+    background-color: #000;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -125,5 +151,19 @@ form button {
 }
 
 form button:hover {
-    background-color: #555;
+    background-color: #333;
+}
+
+@media (min-width: 768px) {
+    #navbar {
+        flex-direction: row;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    #nav-toggle {
+        display: none;
+    }
 }
