@@ -77,10 +77,11 @@ nav ul li a {
 
 .profile-pic {
     border-radius: 50%;
-    size: 20%;
-    width: auto;
-    height: auto;
+    width: 150px;
+    height: 150px;
     margin-bottom: 1rem;
+    object-fit: cover;
+    /* Ensures aspect ratio is maintained */
 }
 
 .hero h1 {
