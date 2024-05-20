@@ -1,137 +1,70 @@
-@import "bourbon";
-
-/* Demo styling */
-
-* {
-    box-sizing: border-box;
-}
-
+/* styles.css */
 body {
-    background-color: #eee;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
-.flex-container {
-    display: flex;
-
-}
-
-html,
-body {
-    height: 100%;
-}
-
-body {
-    display: grid;
-    place-items: end start;
-    font-family: system-ui, sans-serif;
-    padding: 1.5rem;
-}
-
-label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    user-select: none;
-}
-
-input[type="color"] {
-    --size: 2em;
-    flex-shrink: 0;
-    appearance: none;
-    box-sizing: border-box;
-    cursor: pointer;
-    height: var(--size);
-    width: var(--size);
-    padding: 0;
-    border: 0;
-    border-radius: 50%;
-}
-
-input[type="color" i]::-webkit-color-swatch-wrapper {
-    padding: 0;
-}
-
-input[type="color" i]::-webkit-color-swatch {
-    border-radius: 50%;
-}
-
-input[type="color" i]::-moz-color-swatch {
-    border-radius: 50%;
-}
-
-::-webkit-color-swatch,
-::-moz-color-swatch {
-    border-color: transparent;
-}
-
-/* Buttons at the center */
-
-.wrap {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -259px;
-    margin-left: -89px;
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
     text-align: center;
 }
 
-/* General styling for the links */
-
-a {
-    padding: 15px 30px;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    margin: 20px auto;
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
-.btn3,
-.btn3:link,
-.btn3:visited {
-    color: #333;
-    font-size: .8em;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    min-width: 100px;
-    max-width: 60%;
-    position: relative;
-    margin: 0 auto;
-    border: 2px solid transparent;
-    transition: all .2s cubic-bezier(0.455, 0.030, 0.515, 0.955);
+nav ul li {
+    margin: 0 1rem;
+}
 
-    &:after,
-    &:before {
-        content: "";
-        position: absolute;
-        left: - 1em;
-        top: -2px;
-        height: 3.3em;
-        width: 0;
-        border: 1px solid #c75842;
-        transition: inherit;
-    }
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-    &:after {
-        left: auto;
-        right: -1em;
-    }
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+}
 
-    &:hover {
-        border-color: #c75842;
-        transition: border-color .2s .2s cubic-bezier(0.455, 0.030, 0.515, 0.955);
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
 
-        &:after,
-        &:before {
-            right: -2px;
-            transition: all .2s cubic-bezier(0.455, 0.030, 0.515, 0.955);
-        }
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
 
-        &:before {
-            left: -2px;
-            right: auto;
-        }
-    }
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
