@@ -32,6 +32,14 @@ header {
     font-size: 1.5rem;
     cursor: pointer;
     padding: 0;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+#nav-toggle.toggle-open::before {
+    content: '✖';
+    font-size: 1.5rem;
 }
 
 nav ul {
@@ -70,7 +78,7 @@ nav ul li a {
 .profile-pic {
     border-radius: 50%;
     width: 150px;
-    height: 150px;
+    height: auto;
     margin-bottom: 1rem;
 }
 

@@ -2,6 +2,7 @@
 document.getElementById('nav-toggle').addEventListener('click', function () {
     const navMenu = document.querySelector('nav ul');
     navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+    this.classList.toggle('toggle-open');
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -15,6 +16,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const navMenu = document.querySelector('nav ul');
         if (window.innerWidth < 768) {
             navMenu.style.display = 'none';
+            document.getElementById('nav-toggle').classList.remove('toggle-open');
         }
     });
 });
