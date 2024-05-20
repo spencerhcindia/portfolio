@@ -59,6 +59,25 @@ nav ul li a {
     background-color: #555;
 }
 
+.content-section {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.project {
+    margin-bottom: 2rem;
+}
+
+.project h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
 footer {
     text-align: center;
     padding: 1rem 0;
@@ -67,4 +86,37 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background-color: #555;
 }
