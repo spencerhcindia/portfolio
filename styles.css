@@ -4,18 +4,19 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: #fff;
     color: #000;
-    text-align: center;
 }
 
 header {
     background-color: #000;
     color: #fff;
-    padding: 1rem;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    text-align: left;
+    width: 200px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     z-index: 1000;
 }
 
@@ -25,54 +26,34 @@ header {
     align-items: flex-start;
 }
 
-#nav-toggle {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0;
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-}
-
-#nav-toggle.toggle-open::before {
-    content: '✖';
-    font-size: 1.5rem;
-}
-
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #000;
-    height: 100vh;
-    width: 200px;
-    z-index: 999;
+    width: 100%;
 }
 
 nav ul li {
     margin: 0;
+    width: 100%;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: normal;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     display: block;
+    width: 100%;
+    text-align: left;
+}
+
+main {
+    margin-left: 200px;
+    padding: 1rem;
 }
 
 .hero {
     padding: 5rem 1rem 4rem;
-    margin-top: 60px;
-    /* Adjusting margin to account for the fixed header */
 }
 
 .profile-pic {
@@ -136,10 +117,6 @@ footer {
     padding: 0.5rem 0;
     background-color: #000;
     color: #fff;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    z-index: 1000;
     font-size: 0.8rem;
 }
 
@@ -177,21 +154,18 @@ form button:hover {
     background-color: #333;
 }
 
-@media (min-width: 768px) {
-    #navbar {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    nav ul {
-        display: flex;
-        position: static;
+@media (max-width: 767px) {
+    header {
+        width: 100%;
         height: auto;
-        width: auto;
-        background: none;
+        position: static;
     }
 
-    #nav-toggle {
-        display: none;
+    main {
+        margin-left: 0;
+    }
+
+    .hero {
+        padding-top: 2rem;
     }
 }
