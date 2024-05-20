@@ -118,13 +118,14 @@ footer {
     margin-top: 10px;
     width: 100%;
     bottom: 0;
-    z-index: 1000;
+    z-index: 500;
 }
 
 form {
     max-width: 600px;
     margin: 0 auto;
     text-align: left;
+    margin-bottom: auto;
 }
 
 form label {
