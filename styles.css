@@ -4,51 +4,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: #fff;
     color: #000;
-}
-
-header {
-    background-color: #000;
-    color: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    z-index: 1000;
-}
-
-#navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-nav ul li {
-    margin: 0;
-    width: 100%;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 1rem;
-    display: block;
-    width: 100%;
-    text-align: left;
-}
-
-main {
-    margin-left: 200px;
-    padding: 1rem;
+    text-align: center;
 }
 
 .hero {
@@ -151,20 +107,4 @@ form button {
 
 form button:hover {
     background-color: #333;
-}
-
-@media (max-width: 767px) {
-    header {
-        width: 100%;
-        height: auto;
-        position: static;
-    }
-
-    main {
-        margin-left: 0;
-    }
-
-    .hero {
-        padding-top: 2rem;
-    }
 }
