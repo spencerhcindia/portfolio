@@ -1,16 +1,16 @@
 /* styles.css */
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #f4f4f9;
     color: #333;
+    text-align: center;
 }
 
 header {
     background-color: #333;
     color: #fff;
     padding: 1rem 0;
-    text-align: center;
 }
 
 nav ul {
@@ -32,7 +32,6 @@ nav ul li a {
 }
 
 .hero {
-    text-align: center;
     padding: 4rem 1rem;
 }
 
@@ -53,6 +52,7 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .btn:hover {
@@ -70,12 +70,18 @@ nav ul li a {
 }
 
 .project {
-    margin-bottom: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    text-align: left;
 }
 
 .project h3 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
+}
+
+.project p {
+    font-size: 1rem;
 }
 
 footer {
@@ -115,6 +121,7 @@ form button {
     color: #fff;
     border: none;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 form button:hover {
