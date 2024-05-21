@@ -1,4 +1,8 @@
 /* styles.css */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -59,7 +63,6 @@ body {
 .content-section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    text-align: center;
 }
 
 .project {
@@ -111,5 +114,27 @@ form button {
 }
 
 form button:hover {
+    background-color: #333;
+}
+
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.back-to-top:hover {
     background-color: #333;
 }
