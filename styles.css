@@ -21,10 +21,11 @@ body {
 
 .profile-pic {
     border-radius: 50%;
-    width: 300px;
-    height: 300px;
+    width: 275px;
+    height: 275px;
     margin-bottom: 1rem;
     object-fit: cover;
+    /* Ensures aspect ratio is maintained */
 }
 
 .hero h1 {
@@ -40,12 +41,10 @@ body {
 .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: #000;
-    color: #fff;
+    color: #000;
     text-decoration: none;
-    border-radius: 1px;
-    margin: 0.5rem;
     position: relative;
+    /* Required for underline animation */
     transition: background-color 0.3s;
 }
 
@@ -57,7 +56,7 @@ body {
     height: 2px;
     left: 50%;
     position: absolute;
-    background: #fff;
+    background: #000;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
 }
@@ -65,10 +64,6 @@ body {
 .btn:hover:after {
     width: 100%;
     left: 0;
-}
-
-.btn:hover {
-    background-color: #333;
 }
 
 .content-section {
@@ -107,6 +102,7 @@ form {
     margin: 0 auto;
     text-align: left;
     padding: 0 1rem;
+    /* Added padding to prevent overflow on mobile */
 }
 
 form label {
@@ -126,24 +122,42 @@ form textarea {
 form button {
     width: 100%;
     padding: 0.5rem;
-    background-color: #000;
-    color: #fff;
+    background-color: transparent;
+    color: #000;
     border: none;
-    border-radius: 1px;
+    position: relative;
+    /* Required for underline animation */
     transition: background-color 0.3s;
 }
 
-form button:hover {
-    background-color: #333;
+form button:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #000;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+form button:hover:after {
+    width: 100%;
+    left: 0;
 }
 
 .back-to-top {
     display: none;
     position: fixed;
     bottom: 70px;
+    /* Adjusted to prevent overlap with footer */
     right: 30px;
     width: 40px;
+    /* Reduced size */
     height: 40px;
+    /* Reduced size */
     background-color: #000;
     color: #fff;
     border: none;
