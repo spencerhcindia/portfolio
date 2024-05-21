@@ -38,6 +38,13 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.divider {
+    width: 80%;
+    height: 1px;
+    background-color: #000;
+    margin: 1rem 0;
+}
+
 .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -45,7 +52,9 @@ body {
     text-decoration: none;
     position: relative;
     /* Required for underline animation */
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, border 0.3s;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
 }
 
 .btn:after {
@@ -64,6 +73,12 @@ body {
 .btn:hover:after {
     width: 100%;
     left: 0;
+}
+
+.btn:hover {
+    background-color: transparent;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
 }
 
 .content-section {
@@ -127,7 +142,9 @@ form button {
     border: none;
     position: relative;
     /* Required for underline animation */
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, border 0.3s;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
 }
 
 form button:after {
@@ -146,6 +163,12 @@ form button:after {
 form button:hover:after {
     width: 100%;
     left: 0;
+}
+
+form button:hover {
+    background-color: transparent;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
 }
 
 .back-to-top {
