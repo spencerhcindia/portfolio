@@ -133,6 +133,7 @@ form button:hover {
     cursor: pointer;
     z-index: 1000;
     transition: background-color 0.3s;
+    margin-bottom: 50px;
 }
 
 .back-to-top:hover {
