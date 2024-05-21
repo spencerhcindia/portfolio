@@ -21,11 +21,10 @@ body {
 
 .profile-pic {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
     margin-bottom: 1rem;
     object-fit: cover;
-    /* Ensures aspect ratio is maintained */
 }
 
 .hero h1 {
@@ -47,7 +46,6 @@ body {
     border-radius: 1px;
     margin: 0.5rem;
     position: relative;
-    /* Required for underline animation */
     transition: background-color 0.3s;
 }
 
@@ -109,7 +107,6 @@ form {
     margin: 0 auto;
     text-align: left;
     padding: 0 1rem;
-    /* Added padding to prevent overflow on mobile */
 }
 
 form label {
@@ -144,12 +141,9 @@ form button:hover {
     display: none;
     position: fixed;
     bottom: 70px;
-    /* Adjusted to prevent overlap with footer */
     right: 30px;
     width: 40px;
-    /* Reduced size */
     height: 40px;
-    /* Reduced size */
     background-color: #000;
     color: #fff;
     border: none;
