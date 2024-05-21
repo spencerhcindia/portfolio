@@ -21,8 +21,8 @@ body {
 
 .profile-pic {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 225px;
+    height: 225px;
     margin-bottom: 1rem;
     object-fit: cover;
     /* Ensures aspect ratio is maintained */
