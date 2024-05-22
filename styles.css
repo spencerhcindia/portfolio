@@ -64,7 +64,7 @@ body {
     color: #000;
     background-color: rgba(211, 211, 211, 0.7);
     text-decoration: none;
-    border-radius: 1px;
+    border-radius: 5px;
     margin: 0.5rem;
     transition: background-color 0.3s, transform 0.3s;
 }
@@ -152,7 +152,8 @@ form button:hover {
     /* Reduced size */
     height: 40px;
     /* Reduced size */
-    border-radius: 50%;
+    color: #000;
+    border: none;
     text-align: center;
     font-size: 1.5rem;
     cursor: pointer;
