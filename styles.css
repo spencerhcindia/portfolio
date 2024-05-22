@@ -64,7 +64,7 @@ body {
     color: #000;
     background-color: rgba(211, 211, 211, 0.7);
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 1px;
     margin: 0.5rem;
     transition: background-color 0.3s, transform 0.3s;
 }
