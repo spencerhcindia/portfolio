@@ -142,29 +142,6 @@ form button:hover {
     transform: scale(1.05);
 }
 
-.back-to-top {
-    display: none;
-    position: fixed;
-    bottom: 70px;
-    /* Adjusted to prevent overlap with footer */
-    right: 30px;
-    width: 40px;
-    /* Reduced size */
-    height: 40px;
-    /* Reduced size */
-    color: #000;
-    border: none;
-    text-align: center;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 1000;
-    transition: background-color 0.3s;
-}
-
-.back-to-top:hover {
-    background-color: rgba(211, 211, 211, 0.7);
-}
-
 @media (max-width: 600px) {
     .content-section {
         padding: 2rem 1rem;
@@ -174,10 +151,5 @@ form button:hover {
     form {
         padding: 0 0.5rem;
         /* Reduce padding on mobile */
-    }
-
-    .back-to-top {
-        display: none;
-        /* Hide back-to-top button on mobile devices */
     }
 }
