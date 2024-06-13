@@ -187,35 +187,3 @@ video {
 .carousel-control-next {
     right: 10px;
 }
-
-
-.game-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.game-gif {
-    display: none;
-}
-
-@media (max-width: 600px) {
-    .content-section {
-        padding: 2rem 1rem;
-        /* Adjust padding for mobile */
-    }
-
-    form {
-        padding: 0 0.5rem;
-        /* Reduce padding on mobile */
-    }
-
-    .game-container iframe {
-        display: none;
-    }
-
-    .game-gif {
-        display: block;
-    }
-}
