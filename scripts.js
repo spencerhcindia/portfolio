@@ -14,3 +14,13 @@ document.getElementById('back-to-top').addEventListener('click', function () {
         behavior: 'smooth'
     });
 });
+
+document.querySelector('.carousel-control-next').addEventListener('click', function () {
+    const carouselInner = document.querySelector('.carousel-inner');
+    carouselInner.appendChild(carouselInner.firstElementChild);
+});
+
+document.querySelector('.carousel-control-prev').addEventListener('click', function () {
+    const carouselInner = document.querySelector('.carousel-inner');
+    carouselInner.insertBefore(carouselInner.lastElementChild, carouselInner.firstElementChild);
+});
