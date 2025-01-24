@@ -1,0 +1,52 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* margin: 0; */
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    /* position: relative; */
+}
+
+.stage {
+    /* position: absolute; */
+    position: relative;
+    margin-left: auto;
+    margin-right: 0;
+    /* left: 50%;
+    top: 50%; */
+    /* transform: translate(-25%, -25%); */
+}
+
+.table {
+    width: 50%;
+    border-collapse: collapse;
+    /* position: relative; */
+    display: table;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.table,
+th,
+td {
+    border: 1px solid;
+}
+
+td {
+    padding: 8px 10px;
+}
+
+tr:hover {
+    background-color: aliceblue;
+}
+
+.table-header {
+    font-style: italic;
+    font-size: medium;
+    font-weight: bold;
+    background-color: lightgrey;
+}
