@@ -1,3 +1,73 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+}
+
 .stage {
+    margin-top: 10%;
+}
+
+.sticky {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: transform .2s;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: capitalize;
+}
+
+.answer {
+    cursor: pointer;
+}
+
+.answer:hover {
+    background-color: #ffc9c9;
+}
+
+button {
+    height: 25px;
+    width: 75px;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: lightgray;
+    border: 1px black;
+    transition: transform .2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    position: relative;
+}
+
+ul {
+    list-style-type: none;
+    list-style-position: inside;
+    display: inline;
+}
+
+ul li {
+    background: #ffe5e5;
+    padding: 5px;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 5px;
 
 }
+

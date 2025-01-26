@@ -53,7 +53,7 @@ const shuffle = (array) => {
   }
 };
 
-const main = () => {
+const genCorrectAnswer = () => {
   // We set our "stage", the wondow in which our question and answers will both live
   const stage = document.getElementById("stage");
 
@@ -68,10 +68,6 @@ const main = () => {
 
   // Here we create unordered (and unpopulated) answer list
   const answerList = document.createElement("ul");
-  const answer = document.createElement("li");
-
-  // Our correct answer
-  const answerText = questionObject.romanian;
 
   // We don't want to add this again as we collect our wrong answers
   const notAllowed = [questionObject];
@@ -91,19 +87,42 @@ const main = () => {
     const wrongAnsElement = document.createTextNode(answer.romanian);
     const wrongAnsTag = document.createElement("li");
     wrongAnsTag.appendChild(wrongAnsElement);
+    wrongAnsTag.className = "answer";
     answerList.appendChild(wrongAnsTag);
 
     // Add event listener for some interactivity with our answer options
     wrongAnsTag.addEventListener("click", (event_) => {
       if (questionObject === answer) {
-        wrongAnsTag.style.color = "blue";
+        wrongAnsTag.style.color = "lightyellow";
+        const correctAlertElement = document.createTextNode("Correct!");
+        const correctAlertTag = document.createElement("span");
+        correctAlertTag.appendChild(correctAlertElement);
+        stage.appendChild(correctAlertTag);
       } else {
         wrongAnsTag.style.color = "red";
+        wrongAnsTag.style.textDecoration = "line-through";
       }
     });
   });
-
   stage.appendChild(answerList);
+};
+
+const main = () => {
+  genCorrectAnswer();
+
+  const clearButton = document.createElement("button");
+  clearButton.addEventListener("click", (event_) => {
+    clearStage();
+  });
+  clearButton.innerText = "Next >>";
+  document.getElementById("body").appendChild(clearButton);
+};
+
+const clearStage = () => {
+  while (stage.hasChildNodes()) {
+    stage.lastChild.remove();
+  }
+  genCorrectAnswer();
 };
 
 main();
