@@ -16,16 +16,20 @@ body {
     top: 20px;
 }
 
-.score-container {
+/* .score-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
     margin-top: 5%;
-}
+} */
 
 #score {
     font-weight: normal;
     letter-spacing: .3rem;
+}
+
+.chosen {
+
 }
 
 .noSelect {
@@ -36,7 +40,6 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    pointer-events: none;
 }
 
 a {
@@ -44,6 +47,7 @@ a {
     color: black;
     transition: transform .2s;
 }
+
 a:hover {
     text-decoration: underline;
 }

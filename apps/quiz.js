@@ -1,4 +1,10 @@
 const stage = document.getElementById("stage");
+document.addEventListener("keyup", (event_) => {
+  if (event_.code == "Space") {
+    clearStage();
+    incrementQuestionCounter(1);
+  }
+});
 
 const firstTwenty = [
   { english: "I", romanian: "eu" },
@@ -23,19 +29,11 @@ const firstTwenty = [
   { english: "because", romanian: "deoarece" },
 ];
 
-// This function generates a list of wrong answers
-const genWrongAnswers = (cantUse, allEntries) => {
-  // Assigns an answer that is randomly selected
-  let thisAnswer = allEntries[Math.floor(Math.random() * allEntries.length)];
+let questionCounter = 0;
+let questionList = [];
+let correctAnswers = 0;
 
-  // This checks if the supposed wrong answer is actually wrong, and dumps it if so
-  while (cantUse.includes(thisAnswer)) {
-    thisAnswer = allEntries[Math.floor(Math.random() * allEntries.length)];
-  }
-  return thisAnswer;
-};
-
-//  This is a Dorian Yates shuffle confunction
+//  This is a Dorian Yates shuffle confunction... allegedly
 const shuffle = (array) => {
   let currentIndex = array.length;
 
@@ -53,84 +51,173 @@ const shuffle = (array) => {
   }
 };
 
+const questionClass = class {
+  constructor(english, romanian) {
+    this.english = english;
+    this.romanian = romanian;
+    this.used = false;
+  }
+};
+
+const createQuestionList = () => {
+  firstTwenty.forEach((entry) => {
+    let addQuestion = new questionClass(entry.english, entry.romanian);
+    questionList.push(addQuestion);
+  });
+  shuffle(questionList);
+};
+createQuestionList();
+
+// This function generates a list of wrong answers
+const genWrongAnswers = (cantUse, allEntries) => {
+  // Assigns an answer that is randomly selected
+  let thisAnswer = allEntries[Math.floor(Math.random() * allEntries.length)];
+
+  // This checks if the supposed wrong answer is actually wrong, and does not use it if so
+  while (cantUse.includes(thisAnswer)) {
+    thisAnswer = allEntries[Math.floor(Math.random() * allEntries.length)];
+  }
+  return thisAnswer;
+};
+
 const genCorrectAnswer = () => {
   // We set our "stage", the window in which our question and answers will both live
-  const stage = document.getElementById("stage");
+  const stage = document.getElementById("stage"); /////// do u really need this?
+
+  let hasGuessed = false;
 
   // Here we grab an answer to question, and create it's tags and append etc..
-  const questionObject =
-    firstTwenty[Math.floor(Math.random() * firstTwenty.length)];
+  const questionObject = questionList[questionCounter];
   const question = questionObject.english;
   const questHead = document.createElement("h2");
   const englishElement = document.createTextNode(question);
   questHead.appendChild(englishElement);
   stage.appendChild(questHead);
+  questionObject.used = true;
 
   // Here we create unordered (and unpopulated) answer list
   const answerList = document.createElement("ul");
 
   // We don't want to add this again as we collect our wrong answers
-  const notAllowed = [questionObject];
+  const cantUse = [questionObject];
 
   // Loop and call genWrongAnswers till we have our 3 other incorrect options
   for (let i = 0; i < 3; i++) {
-    const wrongAnswer = genWrongAnswers(notAllowed, firstTwenty);
+    const wrongAnswer = genWrongAnswers(cantUse, questionList);
 
-    notAllowed.push(wrongAnswer);
+    cantUse.push(wrongAnswer);
   }
 
   // Shuffle our entire list of answers
-  shuffle(notAllowed);
+  shuffle(cantUse);
 
   // Loop through shuffled list and append to the dom
-  notAllowed.forEach((answer) => {
-    const wrongAnsElement = document.createTextNode(answer.romanian);
-    const wrongAnsTag = document.createElement("li");
-    wrongAnsTag.appendChild(wrongAnsElement);
-    wrongAnsTag.className = "answer";
-    answerList.appendChild(wrongAnsTag);
+  cantUse.forEach((answer) => {
+    const ansText = document.createTextNode(answer.romanian);
+    const ansTag = document.createElement("li");
+    ansTag.appendChild(ansText);
+    ansTag.className = "answer";
+    answerList.appendChild(ansTag);
 
     // Add event listener for some interactivity with our answer options
-    wrongAnsTag.addEventListener("click", (event_) => {
-      if (questionObject === answer) {
-        wrongAnsTag.style.color = "lightyellow";
+    ansTag.addEventListener("click", (event_) => {
+      // Check if guess was right or wrong
+      if (
+        questionObject === answer &&
+        ansTag.getAttribute("chosen") != "true"
+      ) {
+        // If correct we change its color
+        ansTag.style.color = "lightyellow";
+        // We append a correct notification below our list
         const correctAlertElement = document.createTextNode("Correct!");
         const correctAlertTag = document.createElement("span");
         correctAlertTag.appendChild(correctAlertElement);
         stage.appendChild(correctAlertTag);
-        document.getElementById("score").innerText += "+";
-        wrongAnsElement.setAttribute("class") = "chosen";
-        document.querySelector(".chosen").classList.add("noSelect");
-      } else {
-        wrongAnsTag.style.color = "red";
-        wrongAnsTag.style.textDecoration = "line-through";
-        document.getElementById("score").innerText += "-";
-        wrongAnsElement.setAttribute("class") = "chosen";
-        document.querySelector(".chosen").classList.add("noSelect");
+        // And we change answer's attribute chosen to true, so we can prevent continued interaction with this option.
+        ansTag.setAttribute("chosen", "true");
+        if (hasGuessed == false) {
+          // We add a score marker for this question, above
+          document.getElementById("score").innerText += "+";
+          correctAnswers += 1;
+        }
+        //  We set hasGuessed to true so we don't add more than one score marker per question.
+        hasGuessed = true;
+      } else if (
+        questionObject !== answer &&
+        ansTag.getAttribute("chosen") != "true"
+      ) {
+        // Similarly if answer is incorrect we change some styling...
+        ansTag.style.color = "red";
+        ansTag.style.textDecoration = "line-through";
+        if (hasGuessed == false) {
+          // We add a score marker for this question, above
+          document.getElementById("score").innerText += "-";
+        }
+        // And we change the class of this selection to chosen.
+        ansTag.setAttribute("chosen", "true");
+        //  We set hasGuessed to true so we don't add more than one score marker per question.
+        hasGuessed = true;
       }
     });
   });
   stage.appendChild(answerList);
 };
 
-const main = () => {
-  let score = 0;
-  genCorrectAnswer();
+const incrementQuestionCounter = (by) => {
+  questionCounter += by;
+  document.getElementById(
+    "questionCounter"
+  ).innerText = `${questionCounter}/${firstTwenty.length}`;
+  return questionCounter;
+};
 
-  const clearButton = document.createElement("button");
-  clearButton.addEventListener("click", (event_) => {
-    score = clearStage();
-  });
-  clearButton.innerText = "Next >>";
-  document.getElementById("body").appendChild(clearButton);
-  document.getElementById("score").innerText = "";
+const main = () => {
+  console.log(questionList);
+  freshStage();
 };
 
 const clearStage = () => {
   while (stage.hasChildNodes()) {
     stage.lastChild.remove();
   }
+  if (questionCounter == questionList.length) {
+    finalScreen(questionCounter, questionList.length);
+  } else {
+    genCorrectAnswer();
+  }
+};
+
+const freshStage = () => {
   genCorrectAnswer();
+  const clearButton = document.createElement("button");
+  clearButton.addEventListener("click", (event_) => {
+    clearStage();
+    incrementQuestionCounter(1);
+  });
+  clearButton.innerText = "Next >>";
+  clearButton.setAttribute("id", "clear-button");
+  document.getElementById("body").appendChild(clearButton);
+  document.getElementById("score").innerText = "";
+  incrementQuestionCounter(1);
+};
+
+const finalScreen = (finalScore, numQuestions) => {
+  while (stage.hasChildNodes()) {
+    stage.lastChild.remove();
+  }
+  // document.getElementById("score-container").remove();
+  document.getElementById("clear-button").remove();
+
+  const restartButton = document.createElement("button");
+  restartButton.innerText = "Restart!";
+  restartButton.addEventListener("click", (event_) => {
+    incrementQuestionCounter(-questionCounter);
+    questionList = [];
+    createQuestionList();
+    restartButton.remove();
+    freshStage();
+  });
+  document.getElementById("body").appendChild(restartButton);
 };
 
 main();
