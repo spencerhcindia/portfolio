@@ -54,7 +54,7 @@ const shuffle = (array) => {
 };
 
 const genCorrectAnswer = () => {
-  // We set our "stage", the wondow in which our question and answers will both live
+  // We set our "stage", the window in which our question and answers will both live
   const stage = document.getElementById("stage");
 
   // Here we grab an answer to question, and create it's tags and append etc..
@@ -98,9 +98,15 @@ const genCorrectAnswer = () => {
         const correctAlertTag = document.createElement("span");
         correctAlertTag.appendChild(correctAlertElement);
         stage.appendChild(correctAlertTag);
+        document.getElementById("score").innerText += "+";
+        wrongAnsElement.setAttribute("class") = "chosen";
+        document.querySelector(".chosen").classList.add("noSelect");
       } else {
         wrongAnsTag.style.color = "red";
         wrongAnsTag.style.textDecoration = "line-through";
+        document.getElementById("score").innerText += "-";
+        wrongAnsElement.setAttribute("class") = "chosen";
+        document.querySelector(".chosen").classList.add("noSelect");
       }
     });
   });
@@ -108,14 +114,16 @@ const genCorrectAnswer = () => {
 };
 
 const main = () => {
+  let score = 0;
   genCorrectAnswer();
 
   const clearButton = document.createElement("button");
   clearButton.addEventListener("click", (event_) => {
-    clearStage();
+    score = clearStage();
   });
   clearButton.innerText = "Next >>";
   document.getElementById("body").appendChild(clearButton);
+  document.getElementById("score").innerText = "";
 };
 
 const clearStage = () => {
