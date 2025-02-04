@@ -181,7 +181,7 @@ const clearStage = () => {
     stage.lastChild.remove();
   }
   if (questionCounter == questionList.length) {
-    finalScreen(questionCounter, questionList.length);
+    finalScreen(correctAnswers, questionList.length);
   } else {
     genCorrectAnswer();
   }
@@ -205,7 +205,8 @@ const finalScreen = (finalScore, numQuestions) => {
   while (stage.hasChildNodes()) {
     stage.lastChild.remove();
   }
-  // document.getElementById("score-container").remove();
+
+  document.getElementById("questionCounter").hidden = true;
   document.getElementById("clear-button").remove();
 
   const restartButton = document.createElement("button");
@@ -215,8 +216,18 @@ const finalScreen = (finalScore, numQuestions) => {
     questionList = [];
     createQuestionList();
     restartButton.remove();
+    quizCongratsElem.remove();
+    quizFinalScoreElem.remove();
+    document.getElementById("questionCounter").hidden = false;
     freshStage();
   });
+  const quizCongratsElem = document.createElement("h2");
+  quizCongratsElem.innerText = "Great Job!";
+  const quizFinalScoreElem = document.createElement("p");
+  quizFinalScoreElem.innerText = `${finalScore}/${numQuestions}`;
+  quizFinalScoreElem.setAttribute("id", "finalScore");
+  stage.appendChild(quizCongratsElem);
+  stage.appendChild(quizFinalScoreElem);
   document.getElementById("body").appendChild(restartButton);
 };
 

@@ -16,20 +16,14 @@ body {
     top: 20px;
 }
 
-/* .score-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-    margin-top: 5%;
-} */
-
 #score {
     font-weight: normal;
     letter-spacing: .3rem;
 }
 
-.chosen {
-
+#finalScore {
+    font-size: 75px;
+    font-weight: normal;
 }
 
 .noSelect {
