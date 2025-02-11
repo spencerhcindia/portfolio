@@ -5,7 +5,7 @@ document.addEventListener("keyup", (event_) => {
     incrementQuestionCounter(1);
   }
 });
-
+const inputData = [];
 const firstTwenty = [
   { english: "I", romanian: "eu" },
   { english: "you", romanian: "tu" },
