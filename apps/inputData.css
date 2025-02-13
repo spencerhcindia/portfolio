@@ -1,0 +1,19 @@
+body {
+    padding-top: 5em;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+}
+
+.input {
+    margin-bottom: 1em;
+    max-width: 50%;
+    /* align-items: center; */
+}
+
+#input-container {
+    vertical-align:auto;
+}
