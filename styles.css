@@ -53,6 +53,19 @@ body {
     margin: 1rem 0;
 }
 
+.music-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: .5rem;
+}
+.music-logo {
+    width: 50px;
+    height: auto;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
 .shields {
     height: 40px;
 }

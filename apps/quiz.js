@@ -28,6 +28,49 @@ const firstTwenty = [
   { english: "but", romanian: "dar" },
   { english: "because", romanian: "deoarece" },
 ];
+const anotherTwenty = [
+  { english: "father", romanian: "tatăl" },
+  { english: "our", romanian: "nostru" },
+  { english: "which", romanian: "care" },
+  { english: "you", romanian: "ești" },
+  { english: "in", romanian: "în" },
+  { english: "Hallowed-be", romanian: "Sfințească-se" },
+  { english: "names", romanian: "numele" },
+  { english: "your", romanian: "tău" },
+  { english: "vineyard", romanian: "vie" },
+  { english: "kingdom", romanian: "împărăția" },
+  { english: "your", romanian: "ta" },
+  { english: "be-it-is", romanian: "facă-se" },
+  { english: "will", romanian: "voia" },
+  { english: "as", romanian: "precum" },
+  { english: "heaven", romanian: "cer" },
+  { english: "so", romanian: "așa" },
+  { english: "and", romanian: "și" },
+  { english: "on", romanian: "pe" },
+  { english: "earth", romanian: "pământ" },
+  { english: "bread", romanian: "pâine" },
+  { english: "our", romanian: "noastră" },
+  { english: "the", romanian: "cea" },
+  { english: "To-(for)", romanian: "spre" },
+  { english: "being", romanian: "ființă" },
+  { english: "give-us", romanian: "dă-ne-o" },
+  { english: "nine", romanian: "nouă" },
+  { english: "today", romanian: "astǎzi" },
+  { english: "us", romanian: "ne" },
+  { english: "forgive", romanian: "iartă" },
+  { english: "mistakes", romanian: "greșelile" },
+  { english: "our", romanian: "noastre" },
+  { english: "we", romanian: "noi" },
+  { english: "debtors", romanian: "greșiților" },
+  { english: "our", romanian: "noștri" },
+  { english: "no", romanian: "nu" },
+  { english: "cause", romanian: "duce" },
+  { english: "temptation", romanian: "ispită" },
+  { english: "but", romanian: "ci" },
+  { english: "deliver-from", romanian: "izbăveștede" },
+  { english: "heaven", romanian: "cel" },
+  { english: "river", romanian: "rău" },
+];
 
 let questionCounter = 0;
 let questionList = [];
@@ -60,7 +103,7 @@ const questionClass = class {
 };
 
 const createQuestionList = () => {
-  firstTwenty.forEach((entry) => {
+  anotherTwenty.forEach((entry) => {
     let addQuestion = new questionClass(entry.english, entry.romanian);
     questionList.push(addQuestion);
   });
@@ -167,7 +210,7 @@ const incrementQuestionCounter = (by) => {
   questionCounter += by;
   document.getElementById(
     "questionCounter"
-  ).innerText = `${questionCounter}/${firstTwenty.length}`;
+  ).innerText = `${questionCounter}/${anotherTwenty.length}`;
   return questionCounter;
 };
 
